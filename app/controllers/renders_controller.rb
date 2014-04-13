@@ -3,11 +3,19 @@ class RendersController < ApplicationController
   # GET /renders.json
   def index
     @renders = Render.all
+    @contacts = Contact.all.count
+    @services = Service.all.count
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @renders }
     end
+  end
+
+  def reset
+    Service.delete_all
+    Contact.delete_all
+    redirect_to root_path
   end
 
   # GET /renders/1

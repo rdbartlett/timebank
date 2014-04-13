@@ -1,5 +1,8 @@
 Timebank::Application.routes.draw do
   resources :renders
+
+  match 'reset' => 'renders#reset'
+
   root to: 'renders#index'
 
   resources :requests
