@@ -1,0 +1,25 @@
+<h2>Import Services</h2>
+<%= form_tag import_services_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import and overwrite" %>
+<% end %>
+
+<br />
+<hr />
+<br />
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+
+<% @services.each do |service| %>
+  <tr>
+    <td><%= service.name %></td>
+    <td><%= service.title %></td>
+    <td><%= service.body %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,27 @@
+<h2>Import Contacts</h2>
+<%= form_tag import_contacts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <br />
+  <%= submit_tag "Import new set of contacts" %>
+<% end %>
+
+<br />
+<hr />
+<br />
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Details</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.details %></td>
+  </tr>
+<% end %>
+</table>

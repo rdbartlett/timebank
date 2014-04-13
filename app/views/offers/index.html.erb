@@ -1,0 +1,10 @@
+<h2>Offers</h2>
+
+<% @offers.each do |offer| %>
+  <div class="service">
+    <p><strong><%= offer.title %></strong></p>
+    <p><%= offer.body %></p>
+    <p><%= offer.name %><br />
+    <%= offer.contact %></p>
+  </div>
+<% end %>

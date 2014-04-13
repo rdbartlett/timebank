@@ -1,0 +1,10 @@
+<h2>Requests</h2>
+
+<% @requests.each do |request| %>
+  <div class="service">
+    <p><strong><%= request.title %></strong></p>
+    <p><%= request.body %></p>
+    <p><%= request.name %><br />
+    <%= request.contact %></p>
+  </div>
+<% end %>
