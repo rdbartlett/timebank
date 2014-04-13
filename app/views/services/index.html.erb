@@ -1,6 +1,6 @@
 <h2>Import Services</h2>
 <%= form_tag import_services_path, multipart: true do %>
-  <%= file_field_tag :file %>
+  <%= file_field_tag :file %><br/>
   <%= submit_tag "Import and overwrite" %>
 <% end %>
 
