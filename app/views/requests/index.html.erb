@@ -1,10 +1,13 @@
 <h2>Requests</h2>
-
+<a href="#" id="show-contacts">Show contacts</a> |
+<a href="#" id="hide-contacts">Hide contacts</a>
 <% @requests.each do |request| %>
   <div class="service">
     <p><strong><%= request.title %></strong></p>
     <p><%= request.body %></p>
-    <p><%= request.name %><br />
-    <%= request.contact %></p>
+    <p>
+      <span class="name"><%= request.name %></span><br />
+      <span class="contact"><%= request.contact %></span>
+    </p>
   </div>
 <% end %>

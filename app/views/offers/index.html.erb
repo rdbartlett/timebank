@@ -1,10 +1,13 @@
 <h2>Offers</h2>
-
+<a href="#" id="show-contacts">Show contacts</a> |
+<a href="#" id="hide-contacts">Hide contacts</a>
 <% @offers.each do |offer| %>
   <div class="service">
     <p><strong><%= offer.title %></strong></p>
     <p><%= offer.body %></p>
-    <p><%= offer.name %><br />
-    <%= offer.contact %></p>
+    <p>
+      <span class="name"><%= offer.name %></span><br />
+      <span class="contact"><%= offer.contact %></span>
+    </p>
   </div>
 <% end %>

@@ -6,8 +6,8 @@
   <ol>
     <li><%=link_to "Upload latest contacts (#{@contacts})", contacts_path %></li>
     <li><%=link_to "Upload latest offers and requests (#{@services})", services_path %></li>
-    <li><%=link_to "Offers", offers_path %></li>
-    <li><%=link_to "Requests", requests_path %></li>
+    <li><%=link_to "Offers (#{@offers})", offers_path %></li>
+    <li><%=link_to "Requests (#{@requests})", requests_path %></li>
     <li><%=link_to "Reset everything", reset_path %></li>
   </ol>
 </div>
