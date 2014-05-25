@@ -13,15 +13,14 @@
   <tr>
     <th>Name</th>
     <th>Details</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Suburb</th>
   </tr>
 
 <% @contacts.each do |contact| %>
   <tr>
     <td><%= contact.name %></td>
     <td><%= contact.details %></td>
+    <td><%= contact.suburb %></td>
   </tr>
 <% end %>
 </table>

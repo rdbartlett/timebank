@@ -6,6 +6,7 @@ class RequestsController < ApplicationController
     @requests.each do |request|
       lookup = Contact.where(name: request.name).first
       request.contact = lookup.details unless lookup.blank?
+      request.suburb = lookup.suburb unless lookup.blank?
     end
 
     respond_to do |format|

@@ -6,6 +6,7 @@ class OffersController < ApplicationController
     @offers.each do |offer|
       lookup = Contact.where(name: offer.name).first
       offer.contact = lookup.details unless lookup.blank?
+      offer.suburb = lookup.suburb unless lookup.blank?
     end
 
     respond_to do |format|
