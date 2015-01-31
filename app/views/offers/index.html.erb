@@ -1,10 +1,16 @@
 <h2>Offers</h2>
 <a href="#" id="show-contacts">Show contacts</a> |
 <a href="#" id="hide-contacts">Hide contacts</a>
-<% @offers.each do |offer| %>
+<% tmp_category = nil %>
+<% @offers.sort_by(&:category).each do |offer| %>
+  <% if offer.category != tmp_category %>
+    <h3 class="category"><%= offer.category %></h3>
+  <% end %>
+  <% tmp_category = offer.category %>
   <div class="service">
-    <p><strong><%= offer.title %></strong></p>
-    <p><%= offer.body %></p>
+    <p>
+      <strong><%= offer.title %></strong><br />
+      <%= offer.body %></p>
     <p>
       <span class="name"><%= offer.name %></span><br />
       <span class="contact"><%= offer.contact %><br />

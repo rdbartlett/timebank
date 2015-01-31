@@ -9,3 +9,5 @@ $ ->
     $('.contact').hide()
   $('.service').on 'click', (e) ->
     $(this).hide()
+  $('.category').on 'click', (e) ->
+    $(this).hide()

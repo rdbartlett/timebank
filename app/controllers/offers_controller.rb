@@ -3,8 +3,9 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     @offers = Service.where(service_type: 'Offer')
+    @categories = @offers.uniq.pluck(:category)
     @offers.each do |offer|
-      lookup = Contact.where(name: offer.name).first
+      lookup = Contact.first(conditions: [ "lower(name) = ?", offer.name.downcase ])
       offer.contact = lookup.details unless lookup.blank?
       offer.suburb = lookup.suburb unless lookup.blank?
     end
