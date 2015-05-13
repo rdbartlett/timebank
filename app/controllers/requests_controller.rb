@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Service.where(service_type: 'Request')
+    @requests = Service.where(service_type: 'request')
     @categories = @requests.uniq.pluck(:category)
     @requests.each do |request|
       lookup = Contact.first(conditions: [ "lower(name) = ?", request.name.downcase ])

@@ -8,9 +8,8 @@
   <% end %>
   <% tmp_category = offer.category %>
   <div class="service">
-    <p>
-      <strong><%= offer.title %></strong><br />
-      <%= offer.body %></p>
+    <p><strong><%= offer.title %></strong></p>
+    <%= simple_format offer.body %>
     <p>
       <span class="name"><%= offer.name %></span><br />
       <span class="contact"><%= offer.contact %><br />

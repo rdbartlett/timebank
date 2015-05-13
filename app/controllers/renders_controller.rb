@@ -5,8 +5,8 @@ class RendersController < ApplicationController
     @renders = Render.all
     @contacts = Contact.all.count
     @services = Service.all.count
-    @offers = Service.where(service_type: 'Offer').count
-    @requests = Service.where(service_type: 'Request').count
+    @offers = Service.where(service_type: 'offer').count
+    @requests = Service.where(service_type: 'request').count
 
     respond_to do |format|
       format.html # index.html.erb
