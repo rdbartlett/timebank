@@ -9,7 +9,7 @@
   <% tmp_category = offer.category %>
   <div class="service">
     <p><strong><%= offer.title %></strong></p>
-    <%= simple_format offer.body %>
+    <%=  sanitize(offer.body.gsub(/<p>&nbsp;<\/p>/, ''), tags: %w(p ul ol li em strong i b a)) %>
     <p>
       <span class="name"><%= offer.name %></span><br />
       <span class="contact"><%= offer.contact %><br />
