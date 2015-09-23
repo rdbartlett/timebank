@@ -8,6 +8,7 @@ $ ->
   $('#hide-contacts').on 'click', (e) ->
     $('.contact').hide()
   $('.service').on 'click', (e) ->
-    $(this).hide()
+    $(this).remove()
+    $('.service-count').text($('.service').length)
   $('.category').on 'click', (e) ->
-    $(this).hide()
+    $(this).remove()
